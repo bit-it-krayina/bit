@@ -128,32 +128,32 @@ if ($a == 'setperformer' && !empty($userid))
 		));
 		cot_mail($urr['user_email'], $rsubject, $rbody);
 		
-		if(!empty($lastperformer))
-		{
-			// Если исполнителем был другой пользователь, то ему отказ
-			$db->update($db_projects_offers, array("item_choise" => 'refuse', "item_choise_date" => (int)$sys['now_offset']), "item_pid=" . (int)$id . " AND item_choise='performer' AND item_userid=" . (int)$lastperformer['user_id']);
-
-			$urlparams = empty($item['item_alias']) ?
-				array('c' => $item['item_cat'], 'id' => $item['item_id']) :
-				array('c' => $item['item_cat'], 'al' => $item['item_alias']);
-
-			$rsubject = cot_rc($L['project_refuse_header'], array('prtitle' => $item['item_title']));
-			$rbody = cot_rc($L['project_refuse_body'], array(
-				'user_name' => $item['user_name'],
-				'offeruser_name' => $lastperformer['user_name'],
-				'prj_name' => $item['item_title'],	
-				'sitename' => $cfg['maintitle'],	
-				'link' => COT_ABSOLUTE_URL . cot_url('projects', $urlparams, '', true)
-			));
-			cot_mail($lastperformer['user_email'], $rsubject, $rbody);
-			
-			/* === Hook === */
-			foreach (cot_getextplugins('projects.offers.setperformer.refuselastperformer') as $pl)
-			{
-				include $pl;
-			}
-			/* ===== */
-		}
+//		if(!empty($lastperformer))
+//		{
+//			// Если исполнителем был другой пользователь, то ему отказ
+//			$db->update($db_projects_offers, array("item_choise" => 'refuse', "item_choise_date" => (int)$sys['now_offset']), "item_pid=" . (int)$id . " AND item_choise='performer' AND item_userid=" . (int)$lastperformer['user_id']);
+//
+//			$urlparams = empty($item['item_alias']) ?
+//				array('c' => $item['item_cat'], 'id' => $item['item_id']) :
+//				array('c' => $item['item_cat'], 'al' => $item['item_alias']);
+//
+//			$rsubject = cot_rc($L['project_refuse_header'], array('prtitle' => $item['item_title']));
+//			$rbody = cot_rc($L['project_refuse_body'], array(
+//				'user_name' => $item['user_name'],
+//				'offeruser_name' => $lastperformer['user_name'],
+//				'prj_name' => $item['item_title'],	
+//				'sitename' => $cfg['maintitle'],	
+//				'link' => COT_ABSOLUTE_URL . cot_url('projects', $urlparams, '', true)
+//			));
+//			cot_mail($lastperformer['user_email'], $rsubject, $rbody);
+//			
+//			/* === Hook === */
+//			foreach (cot_getextplugins('projects.offers.setperformer.refuselastperformer') as $pl)
+//			{
+//				include $pl;
+//			}
+//			/* ===== */
+//		}
 		
 		/* === Hook === */
 		foreach (cot_getextplugins('projects.offers.setperformer') as $pl)

@@ -49,7 +49,7 @@
 					<!-- IF {OFFER_ROW_CHOISE} != "refuse" -->
 					<a href="{OFFER_ROW_REFUSE}" class="btn btn-warning btn-block">{PHP.L.offers_otkazat}</a> 
 					<!-- ENDIF -->
-					<!-- IF {OFFER_ROW_CHOISE} != "performer" AND {PERFORMER_USERID} == "" -->
+					<!-- IF {OFFER_ROW_CHOISE} != "performer" -->
 					<a href="{OFFER_ROW_SETPERFORMER}" class="btn btn-success btn-block">{PHP.L.offers_ispolnitel}</a> 
 					<!-- ENDIF -->
 					<!-- IF {OFFER_ROW_CHOISE} != "refuse" AND {PHP.cot_plugins_active.sbr} -->

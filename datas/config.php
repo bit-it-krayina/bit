@@ -8,7 +8,6 @@
  * @copyright Copyright (c) Cotonti Team 2008-2014
  * @license BSD
  */
-
 defined('COT_CODE') or die('Wrong URL');
 
 // ========================

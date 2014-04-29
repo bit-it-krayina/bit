@@ -59,6 +59,7 @@
 							<span class="label">{PHP.L.offers_useroffers_none}</span>
 						<!-- ENDIF -->
 					</p>
+					<p>{PHP.L.offers_user_role}: {OFFER_USER_ROLE}</p>
 				</div>
 			</div>
 		</div>	

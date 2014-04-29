@@ -65,8 +65,10 @@ $query_limit = ($cfg['projects']['offersperpage'] > 0) ? "LIMIT $d, ".$cfg['proj
 $totalitems = $db->query("SELECT COUNT(*) FROM $db_projects_offers AS o 
 	" . $where . "")->fetchColumn();
 
-$sql = $db->query("SELECT o.* FROM $db_projects_offers AS o
+$sql = $db->query("SELECT o.*, r.role
+	FROM $db_projects_offers AS o
 	LEFT JOIN $db_projects AS p ON o.item_pid=p.item_id
+	LEFT JOIN $db_role AS r ON r.id=o.role_id	
 	" . $where . "
 	" . $order . "
 	" . $query_limit . "");
@@ -106,7 +108,7 @@ while ($offers = $sql->fetch())
 		"OFFER_ROW_TIMEMAX" => $offers['item_time_max'],
 		"OFFER_ROW_TIMETYPE" => $L['offers_timetype'][$offers['item_time_type']],
 		"OFFER_ROW_CHOISE" => $offers['item_choise'],
-		"OFFER_USER_ROLE" => 'some standart user role',
+		"OFFER_USER_ROLE" => $offers['role'],
 		
 	));
 	

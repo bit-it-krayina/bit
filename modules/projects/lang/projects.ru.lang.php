@@ -97,6 +97,7 @@ $L['offers_upload'] = 'Загрузить';
 $L['offers_offers'] = 'Предложения фрилансеров';
 $L['offers_useroffers'] = 'Мои предложения';
 $L['offers_budget'] = 'Бюджет';
+$L['offers_user_role'] = 'Роль в проекте';
 $L['offers_sroki'] = 'Сроки';
 $L['offers_ot'] = 'от';
 $L['offers_do'] = 'до';

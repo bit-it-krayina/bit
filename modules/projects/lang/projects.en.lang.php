@@ -97,6 +97,7 @@ $L['offers_upload'] = 'Upload';
 $L['offers_offers'] = 'Offers';
 $L['offers_useroffers'] = 'My offers';
 $L['offers_budget'] = 'Budget';
+$L['offers_user_role'] = 'Role in project';
 $L['offers_sroki'] = 'Time';
 $L['offers_ot'] = '';
 $L['offers_do'] = 'to';

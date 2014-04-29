@@ -21,7 +21,9 @@ require_once cot_incfile('forms');
 require_once cot_incfile('extrafields');
 
 // Global variables
-global $cot_extrafields, $db_projects, $db_x, $db_projects_offers, $db_projects_posts, $db_x;
+global $cot_extrafields, $db_projects, $db_x, $db_projects_offers, $db_projects_posts, $db_role;
+
+$db_role = (isset($db_role)) ? $db_role : $db_x . 'role';
 $db_projects = (isset($db_projects)) ? $db_projects : $db_x . 'projects';
 $db_projects_types = (isset($db_projects_types)) ? $db_projects_types : $db_x . 'projects_types';
 $db_projects_offers = (isset($db_projects_offers)) ? $db_projects_offers : $db_x . 'projects_offers';

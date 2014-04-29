@@ -85,6 +85,9 @@
 				{PHP.L.offers_sroki}: {OFFER_ROW_TIMEMIN} {OFFER_ROW_TIMETYPE}
 				<!-- ENDIF -->
 			</p>
+			<p>
+				{PHP.L.offers_user_role}: {OFFER_USER_ROLE}
+			</p>
 			<!-- BEGIN: POSTS -->
 			<h5>{PHP.L.offers_posts_title}</h5>
 			<div id="projectsposts">

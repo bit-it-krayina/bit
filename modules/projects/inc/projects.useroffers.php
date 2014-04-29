@@ -106,6 +106,8 @@ while ($offers = $sql->fetch())
 		"OFFER_ROW_TIMEMAX" => $offers['item_time_max'],
 		"OFFER_ROW_TIMETYPE" => $L['offers_timetype'][$offers['item_time_type']],
 		"OFFER_ROW_CHOISE" => $offers['item_choise'],
+		"OFFER_USER_ROLE" => 'some standart user role',
+		
 	));
 	
 	/* === Hook - Part2 : Include === */

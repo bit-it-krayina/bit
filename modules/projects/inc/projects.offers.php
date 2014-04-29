@@ -313,7 +313,10 @@ foreach (cot_getextplugins('projects.offers.query') as $pl)
 $totaloffers = $db->query("SELECT COUNT(*) FROM $db_projects_offers AS o 
 	" . $where . "")->fetchColumn();
 
-$sql = $db->query("SELECT * FROM $db_projects_offers AS o LEFT JOIN $db_users AS u ON u.user_id=o.item_userid
+$sql = $db->query("SELECT o.*, u.*, r.role 
+	FROM $db_projects_offers AS o
+	LEFT JOIN $db_role AS r ON r.id=o.role_id
+	LEFT JOIN $db_users AS u ON u.user_id=o.item_userid
 	" . $where . " 
 	" . $order . "
 	" . $query_limit . "");
@@ -376,6 +379,7 @@ while ($offers = $sql->fetch())
 		"OFFER_ROW_TIMEMAX" => $offers['item_time_max'],
 		"OFFER_ROW_TIMETYPE" => $L['offers_timetype'][$offers['item_time_type']],
 		"OFFER_ROW_HIDDEN" => $offers['item_hidden'],
+		"OFFER_USER_ROLE" => $offers['role'],
 	));
 
 	if ($usr['id'] == $offers['item_userid'] || $usr['id'] == $item['item_userid'] || $usr['isadmin'])
